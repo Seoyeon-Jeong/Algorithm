@@ -1,7 +1,11 @@
-import java.math.BigInteger;
-
 class Solution {
     public int solution(String number) {
-        return new BigInteger(number).mod(BigInteger.valueOf(9)).intValue();
+        int result = 0;
+        
+        for (char c : number.toCharArray()) {
+            result += (c - '0');
+        }
+        
+        return result % 9;
     }
 }
